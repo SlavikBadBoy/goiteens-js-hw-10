@@ -1,10 +1,9 @@
 const calculateDiscountedPrice = (price, discount, callback) => {
-  const discountedPrice = price - (price * discount) / 100;
-  callback(discountedPrice);
+  return callback(price, discount);
 };
 
-const showDiscountedPrice = (discountedPrice) => {
-  console.log(`Discounted price: ${discountedPrice}`);
+const showDiscountedPrice = (price, discount) => {
+  const discountPrice = (price / 100) * discount;
+  return price - discountPrice;
 };
-
-calculateDiscountedPrice(100, 10, showDiscountedPrice);
+console.log(calculateDiscountedPrice(100, 10, showDiscountedPrice));
